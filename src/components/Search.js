@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 
 const Search = () => {
+    var [id,setId]=useState("")
+    const viewdata=()=>{
+        const data={"id":id}
+        console.log(data)
+    }
   return (
     <div>
         <Header/>
@@ -11,10 +16,10 @@ const Search = () => {
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label for="" className="form-label">Employee id</label>
-                    <input type="text" className="form-control"/>
+                    <input onChange={(x)=>{setId(x.target.value)}} type="text" className="form-control"/>
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <button className="btn btn-primary">SEARCH</button>
+                    <button onClick={viewdata} className="btn btn-primary">SEARCH</button>
                 </div>
             </div>
         </div>
